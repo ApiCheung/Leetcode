@@ -29,6 +29,11 @@ public class BinaryTreeMaximumPathSum {
     /*
     * use the postorder traverse
     * left -> right -> root
+    *
+    * the random 2 point the path is largest
+    *
+    * root must be used
+    * at most one child can be used
     * */
     int maxValue;
     public int maxPathSum(TreeNode root){
