@@ -31,22 +31,24 @@ public class LongestIncreasingSubsequence {
      */
     //method 1 n ^2
     public int lengthOfLIS(int[] nums){
-        if(nums == null || nums.length == 0){
-            return 0;
-        }
-
-        int res = 1;
-        int[] dp = new int[nums.length + 1];
-
-        for(int i = 0; i<nums.length; ++ i) dp[i] = 1;
-
-        for(int i = 1; i < nums.length; ++i){
-            for(int j = 1; j < i; ++j){
-                dp[i] = Math.max(dp[i], dp[j] + 1);
+            if (nums.length == 0) {
+                return 0;
             }
-            res = Math.max(res, dp[i]);
-        }
-        return res;
+            int[] dp = new int[nums.length];
+            dp[0] = 1;
+            int maxans = 1;
+            for (int i = 1; i < dp.length; i++) {
+                int maxval = 0;
+                for (int j = 0; j < i; j++) {
+                    if (nums[i] > nums[j]) {
+                        maxval = Math.max(maxval, dp[j]);
+                    }
+                }
+                dp[i] = maxval + 1;
+                maxans = Math.max(maxans, dp[i]);
+            }
+            return maxans;
+
     }
 
     public int lengthOfLIS2(int[] nums) {
