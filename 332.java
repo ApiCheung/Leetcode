@@ -16,7 +16,7 @@ class solution{
 		}
 		res.add(0,from);
 	}
-
+/* to build a graph with topo sort using the priorityQueu*/
 	private void buildGraph(List<List<String>> tickets, Map<String, PriorityQueue<String>> g){
 		for(List<Sring> travel : tickets){
 			String from = travel.get(0);
