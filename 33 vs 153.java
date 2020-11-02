@@ -48,3 +48,9 @@ public int finMin(int[] nums){
 	}
 	return nums[start];
 }
+
+/**[34512]
+	start = 0 end = 4
+	mid = 2 nums[2] = 5 nums[end] = 2 start = 3
+	mid = 3+4/2 = 3 nums[3] = 1 nums[end] = 2 1<3 end = 3 
+	start = end nums[start] = 1
